@@ -1,3 +1,4 @@
+{% from "components/footer.html" import footer %}
 {% extends "layout.html" %}
 
 {% block page_title %}
@@ -29,20 +30,15 @@ Style guide - Footer
           <div class="grid-row">
 
             <!-- Footer example -->
-            <footer>
-              <div class="wrapper-footer">
-                <div>
-                  <p>A Home Office Digital, Data and Technology service</p>
-                </div>
-                <div class="footer-menu">
-                  <ul>
-                    <li><a href="#0">Feedback</a></li>
-                    <li><a href="#0">Help</a></li>
-                    <li><a href="#0">GOV.UK home</a></li>
-                  </ul>
-                </div>
-              </div>
-            </footer>
+            {{
+              footer(
+                menu=[
+                  { text: 'Feedback', href: '#feedback' },
+                  { text: 'Help', href: '#help' },
+                  { text: 'GOV.UK home', href: 'https://www.gov.uk' }
+                ]
+              )
+            }}
 
           </div>
         </div>

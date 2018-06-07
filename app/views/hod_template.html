@@ -45,21 +45,12 @@
 
     </div>
 
-
-    <header role="banner">
-      <div class="font-ui wrapper-header__library">
-        <div class="header-logo">
-          {% include "includes/home_office_logo-header.html" %}
-        </div>
-        <div class="header-title">
-          <a href="/" class="header-name">Design system</a>
-        </div>
-        <!-- <div class="menu">
-          &nbsp;
-        </div> -->
-      </div>
-    </header>
-
+    {% from "components/header.html" import header %}
+    {{
+      header(
+        title='Design System'
+      )
+    }}
 
     {% block after_header %}{% endblock %}
 

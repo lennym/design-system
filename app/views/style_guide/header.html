@@ -1,3 +1,4 @@
+{% from "components/header.html" import header %}
 {% extends "layout.html" %}
 
 {% block page_title %}
@@ -23,22 +24,15 @@ Style guide - Header
           <div class="grid-row">
 
             <!-- Header example -->
-            <header>
-              <div class="font-ui wrapper-header__library">
-                <div class="header-logo" style="margin-left:0;">
-                  {% include "includes/home_office_logo-header.html" %}
-                </div>
-                <div class="header-title">
-                  <a href="/" class="header-name">Service name</a>
-                </div>
-                <div class="header-menu">
-                  <ul>
-                    <li><a href="#0">Search</a></li>
-                    <li><a href="#0">Sign out</a></li>
-                  </ul>
-                </div>
-              </div>
-            </header>
+            {{
+              header(
+                title='Service name',
+                menu=[
+                  { text: 'Search', href:'#search' },
+                  { text: 'Sign out', href:'#sign-out' }
+                ]
+              )
+            }}
 
           </div>
         </div>
@@ -52,22 +46,17 @@ Style guide - Header
           <div class="grid-row">
 
             <!-- Header example -->
-            <header>
-              <div class="font-ui wrapper-header__library">
-                <div class="header-logo" style="margin-left:0;">
-                  {% include "includes/home_office_logo-header.html" %}
-                </div>
-                <div class="header-title">
-                  <a href="/" class="header-name">Service name</a>
-                </div>
-                <div class="header-menu">
-                  <ul>
-                    <li><a href="#0">Search</a></li>
-                    <li><a href="#0">Sign out</a></li>
-                  </ul>
-                </div>
-              </div>
-            </header>
+            <div>
+            {{
+              header(
+                title='Service name',
+                menu=[
+                  { text: 'Search', href:'#search' },
+                  { text: 'Sign out', href:'#sign-out' }
+                ]
+              )
+            }}
+            </div>
 
             <!-- Heading section -->
             <section class="section-heading" style="padding-left:55px;">
